@@ -5,9 +5,9 @@ This repo uses an R wrapper for [spaCy](https://cran.r-project.org/web/packages/
 
 ## File Overview
 
-1. [sherlockGeocode.R](/scripts/geocoding/python/sherlockGeocode.R) is the main script that performs NER and geocoding on a text corpus.
+1. [sherlockGeocode.R](sherlockGeocode.R) is the main script that performs NER and geocoding on a text corpus.
 
-2. [sherlockGeocodeR.sbatch](/scripts/geocoding/python/sherlockGeocodeR.sbatch) is the slurm script that runs the job on Sherlock.
+2. [sherlockGeocodeR.sbatch](sherlockGeocodeR.sbatch) is the slurm script that runs the job on Sherlock.
 
 ## Usage Instructions
 
