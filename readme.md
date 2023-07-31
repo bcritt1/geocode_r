@@ -11,28 +11,21 @@ This repo uses an R wrapper for [spaCy](https://cran.r-project.org/web/packages/
 
 ## Usage Instructions
 
-### Connect to Sherlock
+### Connect to Farmshare
 
- First you must connect to Sherlock using
+ First you must connect to Farmshare using
 ```
-ssh SUNetID@sherlock.stanford.edu
+ssh SUNetID@rice.stanford.edu
 ```
 in your terminal program.
 
-### Download Files
+### Navigate to Files
 
-Next, we're going to pull the files from this repo onto Sherlock using
-```  
-svn export https://github.com/bcritt1/H-S-Documentation/trunk/scripts/geocoding/python/ geocoding
+Next, we're going to move to the learning environment for this lesson
+```bash  
+cd /farmshare/learning/scripts/scripts/geocoding_r
 ```
-this will create a new directory in your home called "geocoding". Let's ```cd geocoding``` there.
-
-### Tweaking Files
-
-There are a couple pieces of information I can't supply for you, so you'll have to make a few changes in these files. The .sbatch file should be configured for most jobs, but if you're running out of memory 
-or time because your corpus is bigger than the one I was using, you may need to tweak the mem or time parameters. The .R file, however, will require at least one change to point the "input_loc" variable to 
-your corpus location on Sherlock. For more on getting your corpus onto Sherlock, see: 
-[https://www.sherlock.stanford.edu/docs/storage/data-transfer/](https://www.sherlock.stanford.edu/docs/storage/data-transfer/).
+You can check out the files with ```ls``` if you'd like.
 
 ### Running the script
 
