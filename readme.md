@@ -19,6 +19,13 @@ ssh SUNetID@rice.stanford.edu
 ```
 in your terminal program.
 
+### Configuring Outputs
+
+While we're here, let's create a few directories for our outputs:
+```bash
+mkdir out err /scratch/users/$USER/outputs
+```
+
 ### Navigate to Files
 
 Next, we're going to move to the learning environment for this lesson

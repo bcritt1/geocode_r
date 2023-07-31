@@ -31,19 +31,21 @@ reticulate::use_virtualenv("python_environment",required = TRUE)
 #use_python("/usr/local/bin/python3")
 spacy_initialize(model = "en_core_web_sm")
 
-user <- Sys.getenv("LOGNAME")
-input_loc <- "/scratch/users/user/corpus/"
-files <- dir(input_loc, full.names = TRUE)
-text <- c()
-for (f in files) {
-  text <- c(text, paste(readLines(f), collapse = "\n"))
-}
+# code block for ingesting directory of NER inputs
+#input_loc <- "/farmshare/learning/data/"
+#files <- dir(input_loc, full.names = TRUE)
+#text <- c()
+#for (f in files) {
+#  text <- c(text, paste(readLines(f), collapse = "\n"))
+#}
+
+text <- read_csv("/farmshare/learning/data/ner.csv")
 
 parsedtxt <- spacy_parse(text)
 #write.csv(parsedtxt, "pos_ner.csv")
 
 onlyPlaces <- parsedtxt %>%
-  filter(str_detect(parsedtxt$entity, "GPE"))
+  filter(str_detect(parsedtxt$entity_1_group, "geopolitical area"))
 #write out. variable can be changed depending on if you want full dataset, only entities, only places, etc.
 #write.csv(parsedtxt, "pos_ner.csv")
 
@@ -54,4 +56,5 @@ places_tmaptools <- geocode_OSM(onlyPlaces$token, details = TRUE, as.data.frame 
 places_tmaptools <- places_tmaptools[, c("lat", "lon", "display_name", "query")]
 
 # print the results
+user <- Sys.getenv("LOGNAME")
 write.csv(places_tmaptools,"/scratch/users/user/outputs/places.csv")
