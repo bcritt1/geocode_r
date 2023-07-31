@@ -31,7 +31,8 @@ reticulate::use_virtualenv("python_environment",required = TRUE)
 #use_python("/usr/local/bin/python3")
 spacy_initialize(model = "en_core_web_sm")
 
-input_loc <- "/scratch/users/bcritt/corpus/"
+user <- Sys.getenv("LOGNAME")
+input_loc <- "/scratch/users/user/corpus/"
 files <- dir(input_loc, full.names = TRUE)
 text <- c()
 for (f in files) {
@@ -53,4 +54,4 @@ places_tmaptools <- geocode_OSM(onlyPlaces$token, details = TRUE, as.data.frame 
 places_tmaptools <- places_tmaptools[, c("lat", "lon", "display_name", "query")]
 
 # print the results
-write.csv(places_tmaptools,"places.csv")
+write.csv(places_tmaptools,"/scratch/users/user/outputs/places.csv")
