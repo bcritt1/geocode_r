@@ -22,10 +22,10 @@ in your terminal program.
 ### Download Files
 
 Next, we're going to pull the files from this repo onto Sherlock using
-```  
-svn export https://github.com/bcritt1/H-S-Documentation/trunk/scripts/geocoding/python/ geocoding
+```bash  
+git clone https://github.com/bcritt1/geocoding_r.git
 ```
-this will create a new directory in your home called "geocoding". Let's ```cd geocoding``` there.
+this will create a new directory in your home called "geocoding_r". Let's ```cd geocoding_r``` there.
 
 ### Tweaking Files
 
